@@ -1,0 +1,180 @@
+<!-- 
+
+    FAETERJ-Rio
+    2CAW - Construção de Aplicações Web - Projeto [AV2]
+    Codinng - plataforma de auxílio para desenvolvedores iniciantes
+
+    Aluno: Thiago Moreira
+    Prof°: Maria Cláudia
+
+    Página 2-3: Editor
+    Visualização recomendada: 1366x768
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codinng</title>
+
+    <!-- Implementação de fontes (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CodeMirror (CSS) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css">
+    <link href="https://codemirror.net/5/addon/hint/show-hint.css" rel="stylesheet">  <!-- Mostrar dicas (CSS) -->
+
+    <!-- Importação de estilos -->
+    <link rel="stylesheet" href="assets/css/style.css"> <!-- Estilos feitos para o Codinng -->
+    <link rel="stylesheet" href="assets/css/editor.css"> <!-- Estilos feitos para o editor do Codinng -->
+	<link href="assets/css/vscode-dark.css" rel="stylesheet"> <!-- Estilos do tema VSCode Dark (para o editor) -->
+	
+	<!-- Importação de plugins (CodeMirror / JavaScript) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.29.0/codemirror.js"></script>
+    <script src="assets/js/autocomplete.js"></script> <!-- Hospedado manualmente -->
+    <script src="https://codemirror.net/5/addon/display/panel.js"></script>
+	<script src="https://codemirror.net/5/addon/hint/show-hint.js"></script> <!-- Mostrar dicas (quando Ctrl + Space é acionado) -->
+	<script src="https://codemirror.net/5/mode/xml/xml.js"></script> <!-- Suporte com XML -->
+	<script src="https://codemirror.net/5/mode/javascript/javascript.js"></script> <!-- Suporte com JavaScript -->
+	<script src="https://codemirror.net/5/mode/css/css.js"></script> <!-- Suporte com CSS -->
+	<script src="https://codemirror.net/5/mode/htmlmixed/htmlmixed.js"></script> <!-- Suporte com HTMLMixed (HTML, CSS, JS, XML) -->
+    <script src="https://codemirror.net/5/keymap/sublime.js"></script> <!-- Suporte aos atalhos do editor de texto SublimeText -->
+    <script src="https://codemirror.net/5/addon/hint/html-hint.js"></script> <!-- Dicas em HTML -->
+    <script src="https://codemirror.net/5/addon/hint/css-hint.js"></script> <!-- Dicas em CSS -->
+    <script src="https://codemirror.net/5/addon/hint/xml-hint.js"></script> <!-- Dicas em XML -->
+    <script src="https://codemirror.net/5/addon/lint/lint.js"></script> <!-- Exibir erros dos códigos -->
+    <script src="https://codemirror.net/5/addon/selection/active-line.js"></script> <!-- Marcar linha ativa -->
+    <script src="https://codemirror.net/5/addon/edit/closebrackets.js"></script> <!-- Fechar colchetes automaticamente -->
+    <script src="https://codemirror.net/5/addon/edit/closetag.js"></script> <!-- Fechar tag automaticamente -->
+    <script src="https://codemirror.net/5/addon/fold/xml-fold.js"></script> <!-- Dependência do closeTag -->
+    <script src="https://codemirror.net/5/addon/comment/comment.js"></script> <!-- Comentar com Ctrl + ; -->
+    <script src="https://codemirror.net/5/addon/hint/javascript-hint.js"></script> <!-- Dicas em JS -->
+
+    <!-- Definição de estilos (CSS interno) -->
+    <style>
+        div.background img {
+            filter: hue-rotate(299deg);
+        }
+
+        form#editor-web > ul {
+            background-color: var(--vsc-dark-header-background);
+        }
+
+        form#editor-web > ul > li {
+            list-style: none;
+        }
+        
+        input:not(input[type="checkbox"]) {
+            padding: 0.3rem 1rem 0.3rem 0.1rem;
+            margin-bottom: 1rem;
+        }
+
+        span > label[for="termos"] {
+            padding-left: 0.5rem;
+        }
+
+        span > br {
+            margin: 0;
+        }
+    </style>
+</head>
+<body onload="updatePreview();" id="bodyEditor" style="padding-inline: 0;">
+    <div class="background">
+        <img src="assets/img/esfera1.png" alt="" class="backgroundSphere">
+        <img src="assets/img/esfera2.png" alt="" class="backgroundSphere">
+    </div>
+    <header id="headerEditor">
+        <nav id="navEditor">
+            <h1 id="logo">Codinng</h1>
+            <ul>
+                <li><a href="index.html" class="active navMenu">Início</a></li>
+                <li><a href="about.html" class="navMenu">Sobre</a></li>
+                <li><button class="buttonRegistrar" onclick="popupRegistrar();">Registre-se</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="mainEditor">
+        <section id="codinng">
+            <form id="editor-web">
+                <label for="editor">Código</label>
+                <textarea name="editor" wrap="soft" id="editor" class="editor"></textarea>
+            </form>
+            <button type="button" id="updatePreview" class="buttonCTA" onclick="updatePreview();">Atualizar</button>
+        </section>
+        <section>
+            <label for="preview-section">Pré-visualização</label>
+            <section id="preview" style="background-color: white; color: black;"></section>
+        </section>
+    </main>
+    <footer style="bottom: 0; position: fixed; width: 100%;">
+        <p>Copyright 2023 &copy; Todos os direitos reservados</p>
+    </footer>
+    <script src="assets/js/scripts.js"></script>
+    <script>
+        var editor_automatico = false;
+
+        var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+            lineNumbers: true,
+            lineWrapping: true,
+            theme: "vscode-dark",
+            keymap: "sublime",
+            nonEmpty: false, 
+            activateOnTyping: true,
+            styleActiveLine: true,
+            autoCloseTags: true,
+            mode: "htmlmixed",
+            extraKeys: {"Ctrl-Space": "autocomplete"}
+
+        });
+
+        
+        editor.save();
+        editor.setValue(`<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+</body>
+</html>`);
+
+        editor.on("change", function() {
+            if(editor_automatico == true) {
+                updatePreview();
+            }
+        });
+
+        
+        function updatePreview() {
+            var preview = document.getElementById("preview");
+            preview.innerHTML = editor.getValue();
+        }
+
+        // function toggleUpdateAutomatico() {
+
+        //     if(editor_automatico == true) {
+        //         document.getElementById("update-icon").src = "assets/img/icons/bx-refresh-black.svg";
+        //         editor_automatico = false;
+
+        //     } else {
+        //         document.getElementById("update-icon").src = "assets/img/icons/bx-refresh-green.svg";
+        //         editor_automatico = true;
+
+        //     }
+
+        // }
+
+    </script>
+	
+</body>
+</html>

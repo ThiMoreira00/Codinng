@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* border: 2px solid red; */
+}
+
+/* ESTRUTURA */
+body#bodyEditor {
+    background-color: #0A0A0A;
+    padding-inline: 3rem;
+    font-family: 'Inter', sans-serif;
+}
+
+header#headerEditor {
+    padding: 3rem;
+}
+
+main#mainEditor {
+    padding: 3rem;
+}
+
+a.navMenu {
+    text-decoration: none;
+    color: white;
+
+}
+
+nav, nav > ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav > ul > li {
+    display: flex;
+    margin-inline: 1rem;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+nav ul li a:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* TÍTULOS/CABEÇALHOS */
+h1#logo, h2#subtitulo {
+    color: #FFFFFF;
+}
+
+h2#subtitulo {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1#logo {
+    font-size: 16px;
+    font-family: 'Consolas', monospace;
+}
+
+h2#titulo {
+    margin-top: 7rem;
+    font-size: 2rem;
+    line-height: 3rem;
+    padding-bottom: 1rem;
+}
+
+hr {
+    border: 2px solid rgb(31, 31, 31);
+    width: 50px;
+    margin: 0.5rem 0 1rem;
+}
+
+/* MARCAÇÕES */
+
+.active {
+    border-bottom: 2px solid blue;
+}
+
+.underline {
+    text-decoration: underline;  
+}
+
+button.buttonCTA, button.buttonRegistrar {
+    background-color: #1D51FE;
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 5px;
+    font-weight: 500;
+    border: 1px solid #1D51FE;
+}
+
+button.buttonCTA {
+    margin-top: 1rem;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #204cdd;
+    border-color: #204cdd;
+}
+
+.description {
+    color: gray;
+    font-size: 13px;
+}
+
+section#areaCTA {
+    width: 50%;
+}
+
+img.backgroundSphere {
+    position: fixed;
+    left: 0px;
+    z-index: -1;
+}

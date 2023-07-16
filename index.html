@@ -1,0 +1,250 @@
+<!-- 
+
+    FAETERJ-Rio
+    2CAW - Construção de Aplicações Web - Projeto [AV2]
+    Codinng - plataforma de auxílio para desenvolvedores iniciantes
+
+    Aluno: Thiago Moreira
+    Prof°: Maria Cláudia
+
+    Página 1-3: Index (índice)
+    Visualização recomendada: 1920x1080 | 1366x768
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> <!-- Inserir o favicon -->
+    <title>Codinng</title>
+
+    <!-- Implementação de estilos -->
+    <link rel="stylesheet" href="assets/css/index.css">
+
+    <!-- Implementação de fontes (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Definição de estilos (CSS interno) -->
+    <style>
+
+        body > *:not(footer, main) {
+            padding-inline: 6rem;
+        }
+
+        main > section:not(section#parceiros) {
+            padding-inline: 6rem;
+        }
+
+        input:not(input[type="checkbox"]) {
+            padding: 0.3rem 1rem 0.3rem 0.1rem;
+            margin-bottom: 1rem;
+        }
+
+        span > label[for="termos"] {
+            padding-left: 0.5rem;
+        }
+
+        span > br {
+            margin: 0;
+        }
+
+        h3.title-section {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        p.description-section {
+            color: #878787;
+            font-weight: lighter;
+            font-size: 15px;
+        }
+
+        h4 {
+            font-size: 1rem;
+            color: white;
+            font-weight: 300;
+        }
+
+        p.description-section, section > section > ul > li > p {
+            font-family: Montserrat, sans-serif;
+        }
+
+        section#mobilidade, section#assistente {
+            margin-block: 6rem;
+            display: flex;
+            align-items: center;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        section > section > ul > li:nth-child(even) {
+            margin-left: 1rem;
+        }
+
+        section > section > ul > li:nth-child(odd) {
+            margin-right: 1rem;
+        }
+
+        section#mobilidade > section > ul, section#assistente > section > ul {
+            margin-block: 2rem;
+        }
+
+        section#mobilidade > section > ul > li > p, section#assistente > section > ul > li > p {
+            color: #878787;
+            font-size: 15px;
+        }
+
+        section#mobilidade > section > ul > li > a, section#assistente > section > ul > li > a {
+            color: #1D51FE;
+            margin-block: 0.8rem;
+        }
+
+        section#parceiros {
+            background-color: #0D0D0D;
+            padding: 3rem;
+        }
+
+        section#parceiros > h3 {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-inline: 2rem;
+            color: white;
+        }
+
+        section#parceiros > ul > li {
+            margin-inline: 2.5rem;
+            list-style: none;
+        }
+
+        footer li {
+            list-style: none;
+            margin-block: 0.5rem;
+        }
+
+        footer > ul > li {
+            margin-inline: 0.5rem;
+        }
+
+        footer > p {
+            margin-inline: 1rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- ALERTA: A tag <div> foi utilizada para inserir os elementos de fundo. Por motivos de não ter tag equivalente para a semântica do HTML5, esta tag foi chamada. -->
+    <div class="background">
+        <img src="assets/background/esfera1.png" alt="Esfera (Background)" class="backgroundSphere">
+        <img src="assets/background/esfera2.png" alt="Esfera (Background)" class="backgroundSphere">
+    </div>
+    <header>
+        <nav>
+            <h1>Codinng</h1>
+            <ul>
+                <li><a href="index.html" class="active">Início</a></li>
+                <li><a href="about.html">Sobre</a></li>
+                <li><button class="buttonRegistrar" onclick="popupRegistrar();">Registre-se</button></li>
+            </ul>
+        </nav>
+
+        <section style="display: flex;">
+            <section id="areaCTA">
+                <h2 id="titulo">Desenvolva seu próprio<br>website com <span class="underline">facilidade</span></h2>
+                <hr>
+                <p class="description">Desperte sua criatividade e construa sites impressionantes com HTML e CSS de maneira simples e divertida. Comece agora!</p>
+                <article style="display: flex; flex-wrap: wrap; align-items: flex-end;">
+                    <button class="buttonCTA"><a href="editor.html">Experimente agora</a></button>
+                    <img src="assets/img/pessoas.png" alt="Usuários" height="30px" style="margin-left: 1rem;">
+                </article>
+            </section>
+            <section id="areaCTA" style="display: flex; align-items: flex-end; justify-content: flex-end;">
+                <img src="assets/img/notebook.png" alt="Notebook" width="400px">
+            </section>
+        </section>
+    </header>
+    <main>
+        <section id="mobilidade" style="display: flex;">
+            <img src="assets/img/portabilidade_navegador.png" alt="Portabilidade em navegadores" width="350px">
+            <section class="display: flex; flex-direction: column;">
+                <h3 class="title-section">Acesse a toda hora, em qualquer lugar</h3>
+                <p class="description-section">Com a nossa plataforma online, você poderá desfrutar de todas as funcionalidades e recursos diretamente em seu dispositivo móvel. Seja em um smartphone ou tablet, você terá acesso rápido e fácil a todas as ferramentas necessárias para aprimorar suas habilidades de programação e desenvolver seus projetos em qualquer lugar e a qualquer momento.</p>
+                <ul style="display: flex;">
+                    <li>
+                        <h4>Dispositivos móveis</h4>
+                        <p>Seja em um smartphone ou tablet, você terá acesso rápido e fácil a todas as ferramentas necessárias para aprimorar suas habilidades de programação e desenvolver seus projetos em qualquer lugar e a qualquer momento.</p>
+                        <br>
+                        <a href="editor.html">Comece agora →</a>
+                    </li>
+                    <li>
+                        <h4>Compatibilidade com navegadores</h4>
+                        <p>Não importa se você prefere usar o Chrome, Firefox, Safari, Edge ou qualquer outro navegador popular, você pode aproveitar plenamente todos os recursos e funcionalidades que oferecemos, independentemente da sua escolha.</p>
+                        <br>
+                        <a href="editor.html">Experimente →</a>
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <section id="assistente" style="display: flex; flex-direction: row-reverse;">
+            <img src="assets/img/robo.png" alt="Robô" width="350px">
+            <section>
+                <h3 class="title-section">Assistente no Desenvolvimento de Códigos</h3>
+                <p class="description-section">Desenvolver códigos pode ser desafiador, especialmente quando você está começando a sua jornada como programador ou empreendedor. É por isso que nossa plataforma online oferece um recurso exclusivo que pode fazer toda a diferença: um robô virtual para auxiliar durante o desenvolvimento de seus códigos. Descubra as vantagens de ter um assistente virtual sempre disponível para ajudá-lo.</p>
+                <ul style="display: flex;">
+                    <li>
+                        <h4>Suporte em tempo real</h4>
+                        <p>Se você está enfrentando um problema ou precisa de orientação, basta acionar o assistente virtual e ele estará lá para responder suas perguntas e oferecer soluções práticas.</p>
+                        <br>
+                        <a href="editor.html">Comece agora →</a>
+                    </li>
+                    <li>
+                        <h4>Tutoriais e exemplos interativos</h4>
+                        <p>Além de oferecer suporte direto, o robô virtual em nossa plataforma também oferece tutoriais interativos e exemplos de códigos para ajudar você a aprimorar suas habilidades de programação.</p>
+                        <br>
+                        <a href="editor.html">Teste agora →</a>
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <section id="parceiros">
+            <h3>Parceiros</h3>
+            <ul style="display: flex; justify-content: center; align-items: center;">
+                <li><img src="assets/img/partners/google_developers.png" alt="Google Developers" width="150px"></li> <!-- Google Developers -->
+                <li><img src="assets/img/partners/w3schools.png" alt="W3Schools" width="90px"></li> <!-- W3Schools -->
+                <li><img src="assets/img/partners/registro.br.png" alt="Registro.br" width="200px"></li> <!-- Registro.br -->
+            </ul>
+        </section>
+    </main>
+    <footer style="display: flex; padding-inline: 6rem; padding-block: 3rem;">
+        <h1 id="logo">Codinng</h1>
+        <p class="description" style="color: gray; ">Codinng é uma plataforma online revolucionária projetada para auxiliar desenvolvedores iniciantes e empreendedores a criar um site com facilidade e eficiência.</p>
+
+        <nav>
+            <ul style="display: flex; flex-direction: column; align-items: flex-start;">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#">Preços</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+            </ul>
+        </nav>
+
+        <ul style="display: flex; flex-direction: row;">
+            <li><a href="https://www.facebook.com/codinng"><img src="assets/img/icons/facebook.png" alt="Facebook"></a></li>
+            <li><a href="https://instagram.com/codinng"><img src="assets/img/icons/instagram.png" alt="Instagram"></a></li>
+            <li><a href="https://discord.gg/codinng"><img src="assets/img/icons/discord.png" alt="Discord"></a></li>
+            <li><a href="https://twitter.com/codinng"><img src="assets/img/icons/twitter.png" alt="Twitter"></a></li>
+        </ul>
+        <p style="color: gray; font-size: 13px;">Copyright 2023 Codinng&copy; Todos os direitos reservados</p>
+    </footer>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+:root {
+    --vsc-dark-background: #1e1e1e;
+    --vsc-dark-header-background: #3c3c3c;
+}
+
+
+textarea[name=editor], .CodeMirror {
+    background-color: var(--vsc-dark-background);
+    border: 1rem solid var(--vsc-dark-header-background);
+    border-radius: 0.5rem;
+    color: white;
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 1.15rem;
+}
+
+#preview {
+    background-color: white;
+    border: 1rem solid white;
+    border-radius: 0.5rem;
+    color: white;
+    padding: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+textarea#editor, section#preview, .CodeMirror {
+    /* width: calc(48% - 10px); */
+    width: 35rem;
+    height: 28rem;
+    /* width: calc((95%)/2 - 3rem); */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+textarea#editor, .CodeMirror {
+    height: 32.1rem;
+    resize: none;
+}
+
+main#mainEditor {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/* 
+button#updatePreview {
+    display: flex;
+    align-items: center;
+} */
+
+
+label[for="editor"], label[for="preview-section"] {
+    color: white;
+}
+
+.CodeMirror-activeline-background {
+    background-color: #ffffff14;
+}
+
+.CodeMirror-wrap pre {
+    padding-block: 2px;
+}
+
+footer {
+    background-color: #1e1e1e;
+    color: white;
+    text-align: center;
+    padding: 1rem 1.5rem;
+}

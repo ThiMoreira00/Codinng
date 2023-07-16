@@ -1,0 +1,190 @@
+<!-- 
+
+    FAETERJ-Rio
+    2CAW - Construção de Aplicações Web - Projeto [AV2]
+    Codinng - plataforma de auxílio para desenvolvedores iniciantes
+
+    Aluno: Thiago Moreira
+    Prof°: Maria Cláudia
+
+    Página 3-3: Sobre
+    Visualização recomendada: 1920x1080
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codinng</title>
+
+    <!-- Importação de estilos -->
+    <link rel="stylesheet" href="assets/css/index.css">
+
+    <!-- Implementação de fontes (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Definição de estilos (CSS interno) -->
+    <style>
+
+        body > *:not(footer, main) {
+            padding-inline: 6rem;
+        }
+
+        main > section:not(section#parceiros) {
+            padding-inline: 6rem;
+        }
+
+        input:not(input[type="checkbox"]) {
+            padding: 0.3rem 1rem 0.3rem 0.1rem;
+            margin-bottom: 1rem;
+        }
+
+        span > label[for="termos"] {
+            padding-left: 0.5rem;
+        }
+
+        span > br {
+            margin: 0;
+        }
+
+        h3.title-section {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        p.description-section {
+            color: #878787;
+            font-weight: lighter;
+        }
+
+        h4 {
+            font-size: 1rem;
+            color: white;
+            font-weight: 300;
+        }
+
+        footer li {
+            list-style: none;
+            margin-block: 0.5rem;
+        }
+
+        footer > ul > li {
+            margin-inline: 0.5rem;
+        }
+
+        footer > p {
+            margin-inline: 1rem;
+        }
+
+        section:not(section#areaCTA) {
+            margin-block: 3rem;
+        }
+
+        section > h3 {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        section > p, section ul li {
+            color: #a0a0a0;
+            list-style: none;
+        }
+        
+        section#valores {
+            display: flex;
+        }
+
+        section#valores > ul > li {
+            width: 50%;
+            margin: 3rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="background">
+        <img src="assets/background/esfera1.png" alt="" class="backgroundSphere">
+        <img src="assets/background/esfera2.png" alt="" class="backgroundSphere">
+    </div>
+    <header>
+        <nav>
+            <h1>Codinng</h1>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="about.html" class="active">Sobre</a></li>
+                <li><button class="buttonRegistrar" onclick="popupRegistrar();">Registre-se</button></li>
+            </ul>
+        </nav>
+
+        <section id="areaCTA">
+            <h2 id="titulo">Sobre o Codinng</h2>
+            <hr>
+        </section>
+        <iframe width="100%" height="500" src="https://www.youtube.com/embed/XbUwmhL9nT8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </header>
+    <aside>
+        <a href="https://campus.w3schools.com/collections/course-catalog/products/w3schools-full-access-course" target="_blank"><img src="assets/img/propaganda_w3schools.png"  style="float: right;" alt="Propaganda W3Schools"></a>
+    </aside>
+    <main>
+        
+        <section id="missao">
+            <h3>Missão</h3>
+            <p>Nossa missão é capacitar programadores iniciantes e empreendedores, fornecendo uma plataforma online abrangente e acessível que ofereça suporte e recursos necessários para o desenvolvimento de suas habilidades e projetos. Buscamos criar um ambiente colaborativo e enriquecedor, onde os usuários possam aprender, trocar conhecimentos e obter orientações valiosas para alcançar o sucesso em suas jornadas profissionais.</p>
+        </section>
+        <section id="visao">
+            <h3>Visão</h3>
+            <p>Nossa visão é ser a principal referência como plataforma de auxílio para programadores iniciantes e empreendedores, reconhecida pela qualidade de seus recursos, suporte excepcional e comunidade engajada. Buscamos constantemente inovação, mantendo-nos atualizados com as tendências tecnológicas e adaptando nossa plataforma para atender às necessidades em constante evolução de nossos usuários.</p>
+        </section>
+        <section id="valores" style="display: flex;">
+            <h3>Valores</h3>
+            <ul style="display: flex;">
+                <li>
+                    <h4>Excelência</h4>
+                    <p>Nosso compromisso é fornecer serviços e recursos de excelência, garantindo uma experiência satisfatória e enriquecedora para todos os usuários da nossa plataforma. Buscamos aperfeiçoar continuamente nossos produtos e serviços, atendendo às expectativas e superando as necessidades da comunidade de programadores iniciantes e empreendedores.</p>
+                </li>
+                <li>
+                    <h4>Acessibilidade</h4>
+                    <p>Acreditamos que o conhecimento e o suporte devem ser acessíveis a todos. Nossa plataforma é projetada para ser fácil de usar, com recursos intuitivos e uma interface amigável. Além disso, nos esforçamos para tornar nossos serviços financeiramente acessíveis, garantindo que o custo não seja uma barreira para aqueles que buscam aprimorar suas habilidades e buscar o sucesso profissional.</p>
+                </li>
+                <li>
+                    <h4>Colaboração</h4>
+                    <p>Valorizamos a colaboração e a troca de conhecimento entre os membros de nossa comunidade. Incentivamos a interação entre os usuários, promovendo fóruns de discussão, grupos de estudo e projetos colaborativos. Acreditamos que juntos podemos alcançar resultados melhores e enriquecer nossa jornada de aprendizado e crescimento.</p>
+                </li>
+                <li>
+                    <h4>Inovação</h4>
+                    <p>Abraçamos a inovação e buscamos constantemente maneiras de aprimorar nossa plataforma e expandir nossos recursos. Estamos atentos às últimas tendências tecnológicas e às demandas do mercado, garantindo que nossos usuários tenham acesso às ferramentas e conhecimentos mais relevantes e atualizados.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer style="display: flex; padding: 3rem;">
+        <h1 id="logo">Codinng</h1>
+        <p class="description" style="color: gray; ">Codinng é uma plataforma online revolucionária projetada para auxiliar desenvolvedores iniciantes e empreendedores a criar um site com facilidade e eficiência.</p>
+
+        <nav>
+            <ul style="display: flex; flex-direction: column; align-items: flex-start;">
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Preços</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+            </ul>
+        </nav>
+
+        <ul style="display: flex; flex-direction: row;">
+            <li><a href="https://www.facebook.com/codinng"><img src="assets/img/icons/facebook.png" alt="Facebook"></a></li>
+            <li><a href="https://instagram.com/codinng"><img src="assets/img/icons/instagram.png" alt="Instagram"></a></li>
+            <li><a href="https://discord.gg/codinng"><img src="assets/img/icons/discord.png" alt="Discord"></a></li>
+            <li><a href="https://twitter.com/codinng"><img src="assets/img/icons/twitter.png" alt="Twitter"></a></li>
+        </ul>
+        <p style="color: gray; font-size: 13px;">Copyright 2023 Codinng&copy; Todos os direitos reservados </p>
+    </footer>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
